@@ -84,18 +84,27 @@
     .abstract {
       margin: 0 auto 20px auto;
       padding: 18px;
-      background: #fff;
+      /* background: #fff; */
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.04);
       max-width: 880px;
       text-align: justify;
     }
 
+    .caption {
+    max-width: 760px;
+    margin: 10px auto 25px auto;
+    text-align: center;
+    line-height: 1.55;
+    font-size: 1.05rem;
+    color: #333;
+    }
+
     .model-text {
       max-width:760px;
       margin: 14px auto 30px auto;
       /* text-align: center;  */
-      background: #fff;
+      /* background: #fff; */
       padding: 14px;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.03);
@@ -103,7 +112,7 @@
     }
 
     .bibtex {
-      background: #f7f7f7;
+      background: #dedede;
       border-radius: 6px;
       padding: 12px;
       font-family: "Courier New", monospace;
@@ -118,7 +127,7 @@
 
     @media (max-width:760px) {
       iframe.video { height: 240px; }
-      img.teaser, img.responsive { width: 92%; }
+      img.teaser, img.responsive { width: 125%; }
     }
   </style>
 </head>
@@ -145,7 +154,10 @@
 
     <div class="media">
       <img class="teaser" src="images/Pattern crashes.gif" alt="Teaser">
-      We introduce Collision Pattern, a compact and interpretable representation of the relative configuration between ego-attacker at the collision moment. Given a safe scenario, the user specifies collision type and time-to-accident (TTA) to predict collision pattern. This pattern guides the quintic motion planner to generate a feasible attacker trajectory that realizes the specified collision.
+      <p class="caption">
+        We introduce <em>Collision Pattern</em>, a compact and interpretable representation of the relative configuration between ego-attacker at the collision moment. Given a safe scenario, the user specifies collision type and time-to-accident (TTA) to predict collision pattern. This pattern guides the quintic motion planner to generate a feasible attacker trajectory that realizes the specified collision.
+      </p>
+      <!-- We introduce Collision Pattern, a compact and interpretable representation of the relative configuration between ego-attacker at the collision moment. Given a safe scenario, the user specifies collision type and time-to-accident (TTA) to predict collision pattern. This pattern guides the quintic motion planner to generate a feasible attacker trajectory that realizes the specified collision. -->
     </div>
   </div>
 
