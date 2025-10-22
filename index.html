@@ -1,85 +1,191 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Controllable Collision Scenario Generation via Collision Pattern Prediction</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Controllable Collision Scenario Generation via Collision Pattern Prediction">
-  <meta property="og:description" content="Project page for controllable collision scenario generation.">
-  <meta property="og:image" content="https://plchen86157.github.io/conditional_scenario_generation/images/teaser.png">
-  <meta property="og:type" content="website">
-  <!-- <link rel="icon" href="assets/img/favicon.png"> -->
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#111;line-height:1.6}
-    header{padding:60px 20px;text-align:center;border-bottom:1px solid #eee}
-    .title{font-size:32px;font-weight:700;margin:0 0 10px}
-    .authors a{color:#0366d6;text-decoration:none}
-    .btns{margin:20px 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-    .btn{border:1px solid #ddd;padding:10px 16px;border-radius:8px;text-decoration:none;color:#111;background:#fff}
-    .container{max-width:980px;margin:0 auto;padding:30px 20px}
-    .center{text-align:center}
-    img{max-width:100%;height:auto;border-radius:8px}
-    pre{background:#f6f8fa;padding:16px;border-radius:8px;overflow:auto}
-    footer{border-top:1px solid #eee;padding:20px;text-align:center;color:#666}
-    .badge{display:inline-block;background:#eee;border-radius:6px;padding:4px 8px;margin:0 4px;font-size:12px}
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #fafafa;
+      color: #222;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 36px 20px 10px 20px;
+      background: white;
+    }
+    h1 {
+      font-size: 2.4rem;
+      margin: 0.2rem 0 0.6rem 0;
+      font-weight: 700;
+    }
+    .authors {
+      font-size: 1.05rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .links { margin: 8px 0 12px 0; }
+    .links a {
+      display: inline-block;
+      background-color: #f6f6f6;
+      border: 1px solid #dedede;
+      border-radius: 8px;
+      padding: 8px 14px;
+      text-decoration: none;
+      color: #222;
+      font-weight: 600;
+      margin: 6px 6px;
+    }
+    .links a:hover { background: #f0f0f0; }
+    .badges { margin-top: 10px; }
+    .badges span {
+      display:inline-block;
+      background:#eee;
+      padding:6px 10px;
+      border-radius:8px;
+      margin:4px 4px;
+      font-size:0.9rem;
+    }
+
+    .media {
+      text-align:center;
+      margin: 18px 0 28px 0;
+    }
+    img.teaser { width:75%; max-width:900px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+    img.responsive { width:70%; max-width:760px; border-radius:6px; box-shadow:0 6px 16px rgba(0,0,0,0.06); }
+    iframe.video {
+      width:100%;
+      max-width:900px;
+      height: 506px; /* 16:9 */
+      border:0;
+      border-radius:8px;
+      box-shadow:0 8px 22px rgba(0,0,0,0.08);
+    }
+
+    .content {
+      max-width: 920px;
+      margin: auto;
+      padding: 24px;
+      background: transparent;
+    }
+
+    h2 {
+      font-size:1.4rem;
+      margin-top: 2.2rem;
+      margin-bottom: 0.6rem;
+      text-align:center; 
+    }
+
+    .abstract {
+      margin: 0 auto 20px auto;
+      padding: 18px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      max-width: 880px;
+      text-align: justify;
+    }
+
+    .model-text {
+      max-width:760px;
+      margin: 14px auto 30px auto;
+      /* text-align: center;  */
+      background: #fff;
+      padding: 14px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+      line-height: 1.55;
+    }
+
+    .bibtex {
+      background: #f7f7f7;
+      border-radius: 6px;
+      padding: 12px;
+      font-family: "Courier New", monospace;
+      white-space: pre-wrap;
+      max-width:880px;
+      margin: 18px auto 40px auto;
+    }
+
+    .footer {
+      height: 60px;
+    }
+
+    @media (max-width:760px) {
+      iframe.video { height: 240px; }
+      img.teaser, img.responsive { width: 92%; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1 class="title">Controllable Collision Scenario Generation via Collision Pattern Prediction</h1>
-    <p class="authors">
-      Pin-Lun Chen, Chi-Hsi Kung, Che-Han Chang, Wei-Chen Chiu, Yi-Ting Chen
-    </p>
-    <div class="btns">
-      <a class="btn" href="https://arxiv.org/abs/2510.12206" target="_blank">📄 Paper (arXiv)</a>
-      <a class="btn" href="https://github.com/plchen86157/conditional_scenario_generation" target="_blank">💻 Code</a>
-      <a class="btn" href="https://www.youtube.com/watch?v=W-_sarZqfMo" target="_blank">▶️ Video</a>
-      <a class="btn" href="#bibtex">🔖 BibTeX</a>
-    </div>
-    <div class="center">
-      <img src="images/teaser.png" alt="Teaser">
-    </div>
-    <div class="center" style="margin-top:10px;">
-      <span class="badge">Python 3.8</span>
-      <span class="badge">PyTorch 1.8.0</span>
-      <span class="badge">CUDA 11.1</span>
-      <span class="badge">arXiv 2025</span>
-      <span class="badge">GPL-3.0</span>
-    </div>
-  </header>
 
-  <main class="container">
-    <h2>Overview</h2>
-    <p>
-      We introduce a controllable collision scenario generation framework. Given an initial scenario,
-      user-specified collision type and time-to-accident (TTA), our model predicts a <em>Collision Pattern</em>
-      (the relative configuration between ego and attacker at impact), which then guides a trajectory
-      planner to realize a feasible attacker motion.
-    </p>
+  <div class="hero">
+    <h1>Controllable Collision Scenario Generation via Collision Pattern Prediction</h1>
+    <div class="authors">Pin-Lun Chen, Chi-Hsi Kung, Che-Han Chang, Wei-Chen Chiu, Yi-Ting Chen</div>
+
+    <div class="links">
+      <a href="https://arxiv.org/abs/2510.12206" target="_blank">📄 Paper (arXiv)</a>
+      <a href="https://github.com/plchen86157/conditional_scenario_generation" target="_blank">💻 Code</a>
+      <a href="https://www.youtube.com/watch?v=W-_sarZqfMo" target="_blank">🎬 Video (YouTube)</a>
+      <a href="#bibtex">📚 BibTeX</a>
+    </div>
+
+    <div class="badges">
+      <span>Python 3.8</span>
+      <span>PyTorch 1.8.0</span>
+      <span>CUDA 11.1</span>
+      <span>arXiv 2025</span>
+      <span>GPL-3.0</span>
+    </div>
+
+    <div class="media">
+      <img class="teaser" src="images/teaser.png" alt="Teaser">
+    </div>
+  </div>
+
+  <div class="content">
+
+    <h2>Abstract</h2>
+    <div class="abstract">
+      Evaluating the safety of autonomous vehicles (AVs) requires diverse, safety-critical scenarios, with collisions being especially important yet rare and unsafe to collect in the real world. Therefore, the community has been focusing on generating safety-critical scenarios in simulation. However, controlling attributes such as collision type and time-to-accident (TTA) remains challenging. We introduce a new task called controllable collision scenario generation, where the goal is to produce trajectories that realize a user-specified collision type and TTA, to investigate the feasibility of automatically generating desired collision scenarios. To support this task, we present COLLIDE, a large-scale collision scenario dataset constructed by transforming real-world driving logs into diverse collisions, balanced across five representative collision types and different TTA intervals. We propose a framework that predicts <em>Collision Pattern</em>, a compact and interpretable representation that captures the spatial configuration of the ego and the adversarial vehicles at impact, before rolling out full adversarial trajectories. Experiments show that our approach outperforms strong baselines in both collision rate and controllability. Furthermore, generated scenarios consistently induce higher planner failure rates, revealing limitations of existing planners. We demonstrate that these scenarios fine-tune planners for robustness improvements, contributing to safer AV deployment in different collision scenarios.
+    </div>
+
+    <h2>Video Overview</h2>
+    <div class="media center">
+      <iframe class="video" src="https://www.youtube.com/embed/W-_sarZqfMo" allowfullscreen title="Video overview"></iframe>
+    </div>
 
     <h2>Generated Scenarios</h2>
-    <p class="center">
-      <img src="images/generated_scenarios.gif" alt="Generated scenarios">
-    </p>
+    <div class="media">
+      <img class="responsive" src="images/generated_scenarios.gif" alt="Generated scenarios (gif)">
+    </div>
 
     <h2>Model</h2>
-    <p class="center">
-      <img src="images/model.png" alt="Model diagram">
-    </p>
+    <div class="media">
+      <img class="responsive" src="images/model.png" alt="Model diagram">
+    </div>
+
+    <div class="model-text">
+      Given structured scene context and user-specified conditions (collision type and TTA), our model predicts the “collision pattern”, representing the relative configuration of ego and attacker vehicles (ATT) at the moment of collision. The predicted pattern then guides a motion planner to produce a feasible attacker trajectory.
+    </div>
 
     <h2 id="bibtex">BibTeX</h2>
-    <pre>
-@inproceedings{chen2025collisionpattern,
+    <div class="bibtex">
+@article{chen2025collision,
   title={Controllable Collision Scenario Generation via Collision Pattern Prediction},
   author={Chen, Pin-Lun and Kung, Chi-Hsi and Chang, Che-Han and Chiu, Wei-Chen and Chen, Yi-Ting},
-  booktitle={Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
+  journal={arXiv preprint arXiv:2510.12206},
   year={2025}
 }
-    </pre>
-  </main>
+    </div>
 
-  <footer>
-    Template adapted from HCIS-Lab/RiskBench. © 2025 Your Lab / Authors.
-  </footer>
+  </div>
+
+  <div class="footer"></div>
 </body>
 </html>
