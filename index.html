@@ -127,7 +127,12 @@
 
     @media (max-width:760px) {
       iframe.video { height: 240px; }
-      img.teaser, img.responsive { width: 125%; }
+      img.teaser, img.responsive {   width: 100%;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 6px;
+        /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+        }
     }
   </style>
 </head>
