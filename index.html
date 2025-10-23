@@ -100,6 +100,51 @@
     color: #333;
     }
 
+    .section-title {
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: 700;
+      margin-top: 60px;
+      margin-bottom: 20px;
+    }
+
+    .section-desc {
+      text-align: center;
+      font-size: 1.05em;
+      line-height: 1.6;
+      max-width: 760px;
+      margin: 0 auto 40px auto;
+      color: #333;
+    }
+
+    .collision-types {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .collision-item {
+      text-align: center;
+    }
+
+    .collision-item h3 {
+      font-size: 1.3em;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .collision-gif {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 760px; /* 和 Abstract 一致寬度 */
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+
     .model-text {
       max-width:760px;
       margin: 14px auto 30px auto;
@@ -178,14 +223,51 @@
       Evaluating the safety of autonomous vehicles (AVs) requires diverse, safety-critical scenarios, with collisions being especially important yet rare and unsafe to collect in the real world. Therefore, the community has been focusing on generating safety-critical scenarios in simulation. However, controlling attributes such as collision type and time-to-accident (TTA) remains challenging. We introduce a new task called controllable collision scenario generation, where the goal is to produce trajectories that realize a user-specified collision type and TTA, to investigate the feasibility of automatically generating desired collision scenarios. To support this task, we present COLLIDE, a large-scale collision scenario dataset constructed by transforming real-world driving logs into diverse collisions, balanced across five representative collision types and different TTA intervals. We propose a framework that predicts <em>Collision Pattern</em>, a compact and interpretable representation that captures the spatial configuration of the ego and the adversarial vehicles at impact, before rolling out full adversarial trajectories. Experiments show that our approach outperforms strong baselines in both collision rate and controllability. Furthermore, generated scenarios consistently induce higher planner failure rates, revealing limitations of existing planners. We demonstrate that these scenarios fine-tune planners for robustness improvements, contributing to safer AV deployment in different collision scenarios.
     </div>
 
-    <h2>Collision Types in COLLIDE</h2>
+    <h2 class="section-title">Collision Types in COLLIDE</h2>
+
+    <p class="section-desc">
+      COLLIDE provides structured labels based on interpretable collision types with the largest number of task-specific collision cases.
+      We consider 5 collision types based on NHTSA's survey. In all examples, the <b style="color:#d9534f;">EGO (red)</b> vehicle
+      and <b style="color:#5bc0de;">attacker (cyan)</b> are colored accordingly.
+    </p>
+
+    <div class="collision-types">
+
+      <div class="collision-item">
+        <h3>Junction Crossing</h3>
+        <img class="collision-gif" src="images/JC_c.gif" alt="Junction Crossing">
+      </div>
+
+      <div class="collision-item">
+        <h3>Left Turn Across Path (LTAP)</h3>
+        <img class="collision-gif" src="images/LTAP_c.gif" alt="LTAP">
+      </div>
+
+      <div class="collision-item">
+        <h3>Lane Change (LC)</h3>
+        <img class="collision-gif" src="images/LC_c.gif" alt="LC">
+      </div>
+
+      <div class="collision-item">
+        <h3>Opposite Direction (OD)</h3>
+        <img class="collision-gif" src="images/OD_c.gif" alt="OD">
+      </div>
+
+      <div class="collision-item">
+        <h3>Rear-End (RE)</h3>
+        <img class="collision-gif" src="images/RE_c.gif" alt="RE">
+      </div>
+
+    </div>
+
+    <!-- <h2>Collision Types in COLLIDE</h2>
     <div class="media">
       <img class="responsive" src="images/JC.gif" alt="JC">
       <img class="responsive" src="images/LTAP.gif" alt="LTAP">
       <img class="responsive" src="images/LC.gif" alt="LC">
       <img class="responsive" src="images/OD.gif" alt="OD">
       <img class="responsive" src="images/RE.gif" alt="RE">
-    </div>
+    </div> -->
 
     <!-- <h2>Generated Scenarios</h2>
     <div class="media">
