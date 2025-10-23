@@ -109,7 +109,7 @@
     }
 
     .section-desc {
-      text-align: center;
+      /* text-align: center; */
       font-size: 1.05em;
       line-height: 1.6;
       max-width: 760px;
@@ -202,28 +202,30 @@
       <span>GPL-3.0</span>
     </div> -->
 
-    <div class="media">
-      <img class="teaser" src="images/Pattern crashes.gif" alt="Teaser">
-      <p class="caption">
-        We introduce <em>Collision Pattern</em>, a compact and interpretable representation of the relative configuration between ego-attacker at the collision moment. Given a safe scenario, the user specifies collision type and time-to-accident (TTA) to predict collision pattern. This pattern guides the quintic motion planner to generate a feasible attacker trajectory that realizes the specified collision.
-      </p>
-      <!-- We introduce Collision Pattern, a compact and interpretable representation of the relative configuration between ego-attacker at the collision moment. Given a safe scenario, the user specifies collision type and time-to-accident (TTA) to predict collision pattern. This pattern guides the quintic motion planner to generate a feasible attacker trajectory that realizes the specified collision. -->
-    </div>
+  </div>
+
+  <div class="media">
+    <img class="teaser" src="images/Pattern crashes.gif" alt="Teaser">
+    <p class="caption">
+      We introduce <em>Collision Pattern</em>, a compact and interpretable representation of the relative configuration between ego-attacker at the collision moment. Given a safe scenario, the user specifies collision type and time-to-accident (TTA) to predict collision pattern. This pattern guides the quintic motion planner to generate a feasible attacker trajectory that realizes the specified collision.
+    </p>
+    <!-- We introduce Collision Pattern, a compact and interpretable representation of the relative configuration between ego-attacker at the collision moment. Given a safe scenario, the user specifies collision type and time-to-accident (TTA) to predict collision pattern. This pattern guides the quintic motion planner to generate a feasible attacker trajectory that realizes the specified collision. -->
   </div>
 
   <div class="content">
 
-    <h2>Video Overview</h2>
+    <h2 class="section-title">Video Overview</h2>
     <div class="media center">
       <iframe class="video" src="https://www.youtube.com/embed/W-_sarZqfMo" allowfullscreen title="Video overview"></iframe>
     </div>
 
-    <h2>Abstract</h2>
+    <h2 class="section-title">Abstract</h2>
     <div class="abstract">
       Evaluating the safety of autonomous vehicles (AVs) requires diverse, safety-critical scenarios, with collisions being especially important yet rare and unsafe to collect in the real world. Therefore, the community has been focusing on generating safety-critical scenarios in simulation. However, controlling attributes such as collision type and time-to-accident (TTA) remains challenging. We introduce a new task called controllable collision scenario generation, where the goal is to produce trajectories that realize a user-specified collision type and TTA, to investigate the feasibility of automatically generating desired collision scenarios. To support this task, we present COLLIDE, a large-scale collision scenario dataset constructed by transforming real-world driving logs into diverse collisions, balanced across five representative collision types and different TTA intervals. We propose a framework that predicts <em>Collision Pattern</em>, a compact and interpretable representation that captures the spatial configuration of the ego and the adversarial vehicles at impact, before rolling out full adversarial trajectories. Experiments show that our approach outperforms strong baselines in both collision rate and controllability. Furthermore, generated scenarios consistently induce higher planner failure rates, revealing limitations of existing planners. We demonstrate that these scenarios fine-tune planners for robustness improvements, contributing to safer AV deployment in different collision scenarios.
     </div>
 
     <h2 class="section-title">Collision Types in COLLIDE</h2>
+    <!-- <h2>Collision Types in COLLIDE</h2> -->
 
     <p class="section-desc">
       COLLIDE provides structured labels based on interpretable collision types with the largest number of task-specific collision cases.
